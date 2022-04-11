@@ -9,8 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
 
-
-public class Program  {
+public class Program implements ProgramPlan {
 
     private static Program INSTANCE;
 
@@ -53,10 +52,6 @@ public class Program  {
     private List<Observer> observers = new ArrayList<Observer>();
     private int oraEmisiune;
 
-    public int getOraEmisiune() {
-        return oraEmisiune;
-    }
-
     public void setOraEmisiune(int oraEmisiune) {
         this.oraEmisiune = oraEmisiune;
         notifyAllObservers();
@@ -77,66 +72,25 @@ public class Program  {
         this.oraEmisiune = oraEmisiune;
     }
 
-    @Override
-    public String toString() {
-        return "Program [tipProgram=" + tipProgram + ", durataMedie=" + durataMedie + ", emisiuniLive=" + emisiuniLive
-                + ", emisiuniInregistrate=" + emisiuniInregistrate + ", publicTinta=" + publicTinta
-                + ", oraPreponderentaEmisiune=" + oraPreponderentaEmisiune + "]";
-    }
-
-    public String getTipProgram() {
-        return tipProgram;
-    }
-
     public void setTipProgram(String tipProgram) {
         this.tipProgram = tipProgram;
     }
-
-
-    public int getDurataMedie() {
-        return durataMedie;
-    }
-
 
     public void setDurataMedie(int durataMedie) {
         this.durataMedie = durataMedie;
     }
 
-
-    public int getEmisiuniLive() {
-        return emisiuniLive;
-    }
-
-
     public void setEmisiuniLive(int emisiuniLive) {
         this.emisiuniLive = emisiuniLive;
     }
-
-
-    public int getEmisiuniInregistrate() {
-        return emisiuniInregistrate;
-    }
-
 
     public void setEmisiuniInregistrate(int emisiuniInregistrate) {
         this.emisiuniInregistrate = emisiuniInregistrate;
     }
 
-
-    public String getPublicTinta() {
-        return publicTinta;
-    }
-
-
     public void setPublicTinta(String publicTinta) {
         this.publicTinta = publicTinta;
     }
-
-
-    public int getOraPreponderentaEmisiune() {
-        return oraPreponderentaEmisiune;
-    }
-
 
     public void setOraPreponderentaEmisiune(int oraPreponderentaEmisiune) {
         this.oraPreponderentaEmisiune = oraPreponderentaEmisiune;
@@ -208,6 +162,64 @@ public class Program  {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+
+    public ProgramDimineata getDim() {
+        return dim;
+    }
+
+    public ProgramAmiaza getAmiaza() {
+        return amiaza;
+    }
+
+    public ProgramSeara getSeara() {
+        return seara;
+    }
+
+    public ProgramNoapte getNoapte() {
+        return noapte;
+    }
+
+    @Override
+    public String toString() {
+        return "Program{" +
+                "dim=" + dim +
+                ", amiaza=" + amiaza +
+                ", seara=" + seara +
+                ", noapte=" + noapte +
+                '}';
+    }
+
+    private ProgramDimineata dim;
+    private ProgramAmiaza amiaza;
+    private ProgramSeara seara;
+    private ProgramNoapte noapte;
+
+    public void citire(){
+        dim = new ProgramDimineata("Dimineata",5,3,9,"Adulti si Copii",6);
+        amiaza = new ProgramAmiaza("Amiaza",4,1,7,"Adulti si Copii",12);
+        seara = new ProgramSeara("Seara",2,2,2,"Adulti",17);
+        noapte = new ProgramNoapte("Noaptea",6,2,3,"Adulti",20);
+    }
+
+    @Override
+    public void setDimineata(ProgramDimineata dim) {
+        this.dim = dim;
+    }
+
+    @Override
+    public void setAmiaza(ProgramAmiaza amiaza) {
+        this.amiaza = amiaza;
+    }
+
+    @Override
+    public void setSeara(ProgramSeara seara) {
+        this.seara = seara;
+    }
+
+    @Override
+    public void setNoapte(ProgramNoapte noapte) {
+        this.noapte = noapte;
     }
 }
 

@@ -15,45 +15,39 @@ public class Canal extends Program {
 
     private static Canal INSTANCE;
 
-    public static Canal getInstance()
-    {
+    public Canal(Canal canal) {
+        this.nume = canal.nume;
+        this.program = canal.program;
+        this.frecventa = canal.frecventa;
+        this.ziRevizie = canal.ziRevizie;
+    }
+
+    public static Canal getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new Canal("Kanal D",getArrayPrograme(),"3s5",17 );
+            INSTANCE = new Canal("Kanal D", null, "3s5", 17);
         }
         return INSTANCE;
     }
-    private String nume;
-    private static Program[] programe;
-    private String frecventa;
-    private int ziRevizie;
 
-    private static Program[] getArrayPrograme(){
+    private static Program[] programe;
+
+    private static Program[] getArrayPrograme() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Dim Programe:");
         int n = sc.nextInt();
         programe = new Program[n];
-        for(int i=0;i<n;i++){
-            System.out.println("Date Programe:"+(i+1));
+        for (int i = 0; i < n; i++) {
+            System.out.println("Date Programe:" + (i + 1));
             programe[i] = Program.getInstance();
         }
         return programe;
     }
 
-    public Canal() {}
-
-    public Canal(String nume, Program[] programe, String frecventa, int ziRevizie) {
-        this.nume = nume;
-        setPrograme(programe);
-        this.frecventa = frecventa;
-        this.ziRevizie = ziRevizie;
+    public Canal() {
     }
 
     public String getNume() {
         return nume;
-    }
-
-    public void setNume(String nume) {
-        this.nume = nume;
     }
 
     public Program[] getPrograme() {
@@ -62,22 +56,6 @@ public class Canal extends Program {
 
     public void setPrograme(Program[] programe) {
         this.programe = programe;
-    }
-
-    public String getFrecventa() {
-        return frecventa;
-    }
-
-    public void setFrecventa(String frecventa) {
-        this.frecventa = frecventa;
-    }
-
-    public int getZiRevizie() {
-        return ziRevizie;
-    }
-
-    public void setZiRevizie(int ziRevizie) {
-        this.ziRevizie = ziRevizie;
     }
 
     public static void ObserverFunction() {
@@ -89,7 +67,7 @@ public class Canal extends Program {
         System.out.println("Ora pentru schimbare:");
         int ora = sc.nextInt();
 
-        System.out.println("Ora s-a schimbat la ora "+ora);
+        System.out.println("Ora s-a schimbat la ora " + ora);
         p.setOraEmisiune(ora);
     }
 
@@ -106,7 +84,7 @@ public class Canal extends Program {
     public void writeGson(Canal[] c) {
 
         try {
-            List <Canal> canale  = Arrays.asList(c[0]);
+            List<Canal> canale = Arrays.asList(c[0]);
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
@@ -140,8 +118,7 @@ public class Canal extends Program {
         }
     }
 
-    @Override
-    public String toString() {
+    public String toString1() {
         return "Canal{" +
                 "programe=" + Arrays.toString(programe) +
                 ", frecventa='" + frecventa + '\'' +
@@ -149,4 +126,50 @@ public class Canal extends Program {
                 '}';
     }
 
+    public void setNume(String nume) {
+        this.nume = nume;
+    }
+
+    public void setProgram(Program program) {
+        this.program = program;
+    }
+
+    public void setFrecventa(String frecventa) {
+        this.frecventa = frecventa;
+    }
+
+    public void setZiRevizie(int ziRevizie) {
+        this.ziRevizie = ziRevizie;
+    }
+
+    @Override
+    public String toString() {
+        return "Canal{" +
+                "nume='" + nume + '\'' +
+                ", program=" + program +
+                ", frecventa='" + frecventa + '\'' +
+                ", ziRevizie=" + ziRevizie +
+                '}';
+    }
+
+    public Canal(String nume, Program program, String frecventa, int ziRevizie) {
+        this.nume = nume;
+        this.program = program;
+        this.frecventa = frecventa;
+        this.ziRevizie = ziRevizie;
+    }
+
+    private String nume;
+    private Program program;
+    private String frecventa;
+    private int ziRevizie;
+
+    public void citire() {
+        program = new Program();
+        program.citire();
+        setNume("Kanal D");
+        program = new ProgramBuilder().Dimineata(program.getDim()).Amiaza(program.getAmiaza()).Seara(program.getSeara()).Noapte(program.getNoapte()).Build();
+        setFrecventa("13x");
+        setZiRevizie(17);
+    }
 }

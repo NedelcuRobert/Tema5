@@ -1,6 +1,5 @@
 package org.example.Tema5;
 
-
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -22,7 +21,7 @@ public class FirmaTeleviziune {
         }
         Canal[] canale = new Canal[n];
         for(int i=0;i<n;i++){
-            canale[i] = Canal.getInstance();
+            canale[i] = (Canal) Canal.getInstance();
         }
         for(int i=0;i<n;i++){
             System.out.println(canale[i]);
@@ -39,5 +38,27 @@ public class FirmaTeleviziune {
         canale[alegere-1] = new Canal();
         canale[alegere-1].emisiuneFactory();
         canale[alegere-1].ObserverFunction();
+    }
+
+    public void runBuilder(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Dimensiune canale:");
+        int dim = sc.nextInt();
+        canale = new Canal[dim];
+        System.out.println("Alegeti un canal:1-"+dim);
+        int alegere = sc.nextInt();
+        canale[alegere-1] = new Canal();
+        canale[alegere-1].citire();
+        System.out.println(canale[alegere-1].toString());
+    }
+
+    public void runIterator(){
+        CanaleColectie colectie = new CanaleColectie();
+        Iterator iterator = colectie.createIterator();
+        System.out.println("-------Canale :------------");
+        while (iterator.hasNext()) {
+            Canal n = (Canal) iterator.next();
+            System.out.println(n.getNume());
+        }
     }
 }

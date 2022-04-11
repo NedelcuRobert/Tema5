@@ -1,6 +1,6 @@
 package org.example.Tema5;
 
-public interface Emisiune {
+interface Emisiune {
     void citire();
     String toString();
 }

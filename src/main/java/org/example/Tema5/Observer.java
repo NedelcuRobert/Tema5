@@ -2,6 +2,7 @@ package org.example.Tema5;
 
 public class Observer {
     private Program program;
+
     public Observer(Program p){
         this.program = p;
         this.program.attach(this);
