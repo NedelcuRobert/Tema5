@@ -1,4 +1,6 @@
-package org.example.Tema5;
+package org.example.Tema5.Canale;
+
+import org.example.Tema5.Patterns.Iterator;
 
 public class CanaleIterator implements Iterator{
     private Canal[] canale;

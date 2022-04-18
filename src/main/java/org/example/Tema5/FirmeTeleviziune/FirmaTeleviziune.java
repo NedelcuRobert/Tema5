@@ -1,7 +1,11 @@
-package org.example.Tema5;
+package org.example.Tema5.FirmeTeleviziune;
 
 import java.util.Scanner;
 import java.util.logging.Logger;
+
+import org.example.Tema5.Canale.Canal;
+import org.example.Tema5.Patterns.Iterator;
+import org.example.Tema5.Canale.CanaleColectie;
 
 public class FirmaTeleviziune {
 

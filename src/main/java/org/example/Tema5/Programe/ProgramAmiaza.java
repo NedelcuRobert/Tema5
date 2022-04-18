@@ -1,4 +1,4 @@
-package org.example.Tema5;
+package org.example.Tema5.Programe;
 
 public class ProgramAmiaza {
 

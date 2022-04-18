@@ -1,6 +1,8 @@
-package org.example.Tema5;
+package org.example.Tema5.Programe;
 
-interface ProgramPlan {
+import org.example.Tema5.Programe.ProgramDimineata;
+
+public interface ProgramPlan {
     void setDimineata(ProgramDimineata dim);
 
     void setAmiaza(ProgramAmiaza amiaza);

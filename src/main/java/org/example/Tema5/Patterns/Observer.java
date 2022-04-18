@@ -1,4 +1,6 @@
-package org.example.Tema5;
+package org.example.Tema5.Patterns;
+
+import org.example.Tema5.Programe.Program;
 
 public class Observer {
     private Program program;

@@ -1,4 +1,7 @@
-package org.example.Tema5;
+package org.example.Tema5.Canale;
+
+import org.example.Tema5.Programe.Program;
+import org.example.Tema5.Patterns.Iterator;
 
 import java.util.Scanner;
 

@@ -1,6 +1,6 @@
-package org.example.Tema5;
+package org.example.Tema5.Programe;
 
-public class ProgramNoapte {
+public class ProgramSeara {
     private String tipProgram;
     private int durataMedie;
     private int emisiuniLive;
@@ -8,7 +8,7 @@ public class ProgramNoapte {
     private String publicTinta;
     private int oraPreponderentaEmisiune;
 
-    public ProgramNoapte(String tipProgram, int durataMedie, int emisiuniLive, int emisiuniInregistrate, String publicTinta, int oraPreponderentaEmisiune) {
+    public ProgramSeara(String tipProgram, int durataMedie, int emisiuniLive, int emisiuniInregistrate, String publicTinta, int oraPreponderentaEmisiune) {
         this.tipProgram = tipProgram;
         this.durataMedie = durataMedie;
         this.emisiuniLive = emisiuniLive;
@@ -19,7 +19,7 @@ public class ProgramNoapte {
 
     @Override
     public String toString() {
-        return "ProgramNoapte{" +
+        return "ProgramSeara{" +
                 "tipProgram='" + tipProgram + '\'' +
                 ", durataMedie=" + durataMedie +
                 ", emisiuniLive=" + emisiuniLive +
@@ -52,4 +52,5 @@ public class ProgramNoapte {
     public void setOraPreponderentaEmisiune(int oraPreponderentaEmisiune) {
         this.oraPreponderentaEmisiune = oraPreponderentaEmisiune;
     }
+
 }

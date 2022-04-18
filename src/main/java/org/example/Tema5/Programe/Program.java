@@ -1,4 +1,4 @@
-package org.example.Tema5;
+package org.example.Tema5.Programe;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -8,6 +8,13 @@ import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+
+import org.example.Tema5.Emisiuni.Emisiune;
+
+import org.example.Tema5.Emisiuni.EmisiuneAmuzanta;
+import org.example.Tema5.Emisiuni.EmisiuneAventura;
+import org.example.Tema5.Patterns.Observer;
+
 
 public class Program implements ProgramPlan {
 
@@ -106,7 +113,7 @@ public class Program implements ProgramPlan {
         return null;
     }
 
-    public void citire(Scanner sc) {
+    public void citire1(Scanner sc) {
         System.out.println("Tip Program:");
         String tip=sc.next();
         this.setTipProgram(tip);

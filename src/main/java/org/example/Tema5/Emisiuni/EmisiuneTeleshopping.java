@@ -1,7 +1,6 @@
-package org.example.Tema5;
+package org.example.Tema5.Emisiuni;
 
-public class EmisiuneAventura implements Emisiune {
-
+public class EmisiuneTeleshopping {
     private String name;
     private String publicTinta;
     private int ora;
@@ -48,7 +47,7 @@ public class EmisiuneAventura implements Emisiune {
 
     @Override
     public String toString() {
-        return "EmisiuneAventura{" +
+        return "EmisiuneTeleshopping{" +
                 "name='" + name + '\'' +
                 ", publicTinta='" + publicTinta + '\'' +
                 ", ora=" + ora +

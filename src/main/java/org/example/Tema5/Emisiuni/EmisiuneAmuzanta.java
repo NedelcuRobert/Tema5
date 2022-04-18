@@ -1,6 +1,7 @@
-package org.example.Tema5;
+package org.example.Tema5.Emisiuni;
 
-public class EmisiuneTeleshopping {
+public class EmisiuneAmuzanta implements Emisiune  {
+
     private String name;
     private String publicTinta;
     private int ora;
@@ -39,15 +40,15 @@ public class EmisiuneTeleshopping {
     }
 
     public void citire(){
-        setName("Tarzan");
-        setPublicTinta("16+");
-        setOra(21);
-        setDurata(2);
+        setName("La Maruta");
+        setPublicTinta("18+");
+        setOra(17);
+        setDurata(1);
     }
 
     @Override
     public String toString() {
-        return "EmisiuneTeleshopping{" +
+        return "EmisiuneAmuzanta{" +
                 "name='" + name + '\'' +
                 ", publicTinta='" + publicTinta + '\'' +
                 ", ora=" + ora +
