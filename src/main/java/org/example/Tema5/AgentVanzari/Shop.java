@@ -6,25 +6,21 @@ import org.example.Tema5.FirmeTeleviziune.Telekom;
 import org.example.Tema5.FirmeTeleviziune.UPC;
 
 public class Shop {
-    private FirmaTV Digi;
-    private FirmaTV Telekom;
-    private FirmaTV UPC;
+   private FirmaTV producator;
 
-    public Shop(){
-        Digi = new Digi();
-        Telekom = new Telekom();
-        UPC = new UPC();
-    }
     public void Digi(){
-        Digi.ListaPrograme();
-        Digi.pret();
+        producator = new Digi();
+        producator.ListaPrograme();
+        producator.pret();
     }
     public void Telekom(){
-        Telekom.ListaPrograme();
-        Telekom.pret();
+        producator = new Telekom();
+        producator.ListaPrograme();
+        producator.pret();
     }
-    public void UPC(){
-        UPC.ListaPrograme();
-        UPC.pret();
+    public void UPC() {
+        producator = new UPC();
+        producator.ListaPrograme();
+        producator.pret();
     }
 }

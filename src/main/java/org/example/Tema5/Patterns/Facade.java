@@ -1,6 +1,9 @@
 package org.example.Tema5.Patterns;
 
-import org.example.Tema5.AgentVanzari.Shop;
+import org.example.Tema5.FirmeTeleviziune.Digi;
+import org.example.Tema5.FirmeTeleviziune.FirmaTV;
+import org.example.Tema5.FirmeTeleviziune.Telekom;
+import org.example.Tema5.FirmeTeleviziune.UPC;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +12,7 @@ import java.io.InputStreamReader;
 public class Facade {
     private static int  choice;
 
-    public void runFacade() throws IOException {
+    public void runShopFirmeTV() throws IOException {
         do{
             System.out.print("========= TV Shop ============ \n");
             System.out.print("            1. Digi.              \n");
@@ -20,22 +23,21 @@ public class Facade {
 
             BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
             choice=Integer.parseInt(br.readLine());
-            Shop sk = new Shop();
-
+            FirmaTV Producator;
             switch (choice) {
                 case 1:
                 {
-                    sk.Digi();
+                    Producator = new Digi();
                 }
                 break;
                 case 2:
                 {
-                    sk.Telekom();
+                    Producator = new Telekom();
                 }
                 break;
                 case 3:
                 {
-                    sk.UPC();
+                    Producator = new UPC();
                 }
                 break;
                 default:
@@ -44,7 +46,8 @@ public class Facade {
                 }
                 return;
             }
-
+            Producator.ListaPrograme();
+            Producator.pret();
         }while(choice!=4);
     }
 }

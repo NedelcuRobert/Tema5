@@ -14,9 +14,6 @@ import java.util.Scanner;
 import org.example.Tema5.Programe.Program;
 import org.example.Tema5.Patterns.Observer;
 import org.example.Tema5.Programe.ProgramBuilder;
-import org.example.Tema5.Emisiuni.Emisiune;
-import org.example.Tema5.Emisiuni.EmisiuneAmuzanta;
-import org.example.Tema5.Emisiuni.Emisiune;
 
 public class Canal extends Program {
 
