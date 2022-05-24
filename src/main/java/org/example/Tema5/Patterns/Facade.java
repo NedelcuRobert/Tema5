@@ -1,9 +1,6 @@
 package org.example.Tema5.Patterns;
 
-import org.example.Tema5.FirmeTeleviziune.Digi;
-import org.example.Tema5.FirmeTeleviziune.FirmaTV;
-import org.example.Tema5.FirmeTeleviziune.Telekom;
-import org.example.Tema5.FirmeTeleviziune.UPC;
+import org.example.Tema5.FirmeTeleviziune.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,21 +20,28 @@ public class Facade {
 
             BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
             choice=Integer.parseInt(br.readLine());
-            FirmaTV Producator;
             switch (choice) {
                 case 1:
                 {
-                    Producator = new Digi();
+                    Digi digi = new Digi();
+                    digi.ListaPrograme();
+                    digi.pret();
+                    digi.OfertaInternet();
                 }
                 break;
                 case 2:
                 {
-                    Producator = new Telekom();
+                    Telekom telekom = new Telekom();
+                    telekom.ListaPrograme();
+                    telekom.pret();
                 }
                 break;
                 case 3:
                 {
-                    Producator = new UPC();
+                    UPC upc = new UPC();
+                    upc.ListaPrograme();
+                    upc.pret();
+                    upc.OfertaInternet();
                 }
                 break;
                 default:
@@ -46,8 +50,6 @@ public class Facade {
                 }
                 return;
             }
-            Producator.ListaPrograme();
-            Producator.pret();
         }while(choice!=4);
     }
 }

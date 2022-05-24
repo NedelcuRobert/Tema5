@@ -1,6 +1,6 @@
 package org.example.Tema5.Emisiuni;
 
-public class EmisiuneTeleshopping {
+public class EmisiuneTeleshopping implements Emisiune {
     private String name;
     private String publicTinta;
     private int ora;

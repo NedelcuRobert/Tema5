@@ -25,7 +25,7 @@ public class CanaleColectie {
             String frecventa = sc.next();
             System.out.println("Zi Revizie:");
             int ziRevizie = sc.nextInt();
-            addItem(new Canal(nume, program, frecventa, ziRevizie));
+            addItem(new Canal(nume, program, frecventa, ziRevizie,28));
         }
     }
 

@@ -19,6 +19,29 @@ import org.example.Tema5.Patterns.Observer;
 public class Program implements ProgramPlan {
 
     private static Program INSTANCE;
+    private Emisiune emisiune;
+
+    @Override
+    public String toString() {
+        return "Program{" +
+                "emisiune=" + emisiune +
+                ", emisiuniLive=" + emisiuniLive +
+                ", emisiuniInregistrate=" + emisiuniInregistrate +
+                ", publicTinta='" + publicTinta + '\'' +
+                ", oraPreponderentaEmisiune=" + oraPreponderentaEmisiune +
+                ", durataMedie=" + durataMedie +
+                ", tipProgram='" + tipProgram + '\'' +
+                ", observers=" + observers +
+                ", oraEmisiune=" + oraEmisiune +
+                '}';
+    }
+
+    private int emisiuniLive;
+    private int emisiuniInregistrate;
+    private String publicTinta;
+    private int oraPreponderentaEmisiune;
+    private int durataMedie;
+    private String tipProgram;
 
     public static Program getInstance()
     {
@@ -30,7 +53,7 @@ public class Program implements ProgramPlan {
 
     public Program(){}
 
-    private Program(Emisiune emisiune, String tipProgram, int durataMedie, int emisiuniLive, int emisiuniInregistrate, String publicTinta, int oraPreponderentaEmisiune) {
+    public Program(Emisiune emisiune, String tipProgram, int durataMedie, int emisiuniLive, int emisiuniInregistrate, String publicTinta, int oraPreponderentaEmisiune) {
         this.emisiune = emisiune;
         this.tipProgram = tipProgram;
         this.durataMedie = durataMedie;
@@ -47,14 +70,6 @@ public class Program implements ProgramPlan {
     public void setEmisiune(Emisiune e) {
         this.emisiune = e;
     }
-
-    private Emisiune emisiune;
-    private String tipProgram;
-    private int durataMedie;
-    private int emisiuniLive;
-    private int emisiuniInregistrate;
-    private String publicTinta;
-    private int oraPreponderentaEmisiune;
 
     private List<Observer> observers = new ArrayList<Observer>();
     private int oraEmisiune;
@@ -185,16 +200,6 @@ public class Program implements ProgramPlan {
 
     public ProgramNoapte getNoapte() {
         return noapte;
-    }
-
-    @Override
-    public String toString() {
-        return "Program{" +
-                "dim=" + dim +
-                ", amiaza=" + amiaza +
-                ", seara=" + seara +
-                ", noapte=" + noapte +
-                '}';
     }
 
     private ProgramDimineata dim;

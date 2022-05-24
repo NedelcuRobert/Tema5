@@ -18,17 +18,19 @@ import org.example.Tema5.Programe.ProgramBuilder;
 public class Canal extends Program {
 
     private static Canal INSTANCE;
+    private double audienta;
 
     public Canal(Canal canal) {
         this.nume = canal.nume;
         this.program = canal.program;
         this.frecventa = canal.frecventa;
         this.ziRevizie = canal.ziRevizie;
+        this.audienta = canal.audienta;
     }
 
     public static Canal getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new Canal("Kanal D", null, "3s5", 17);
+            INSTANCE = new Canal("Kanal D", null, "3s5", 17,233);
         }
         return INSTANCE;
     }
@@ -122,14 +124,6 @@ public class Canal extends Program {
         }
     }
 
-    public String toString1() {
-        return "Canal{" +
-                "programe=" + Arrays.toString(programe) +
-                ", frecventa='" + frecventa + '\'' +
-                ", ziRevizie=" + ziRevizie +
-                '}';
-    }
-
     public void setNume(String nume) {
         this.nume = nume;
     }
@@ -153,14 +147,16 @@ public class Canal extends Program {
                 ", program=" + program +
                 ", frecventa='" + frecventa + '\'' +
                 ", ziRevizie=" + ziRevizie +
+                ", audienta=" + audienta+
                 '}';
     }
 
-    public Canal(String nume, Program program, String frecventa, int ziRevizie) {
+    public Canal(String nume, Program program, String frecventa, int ziRevizie,double audienta) {
         this.nume = nume;
         this.program = program;
         this.frecventa = frecventa;
         this.ziRevizie = ziRevizie;
+        this.audienta = audienta;
     }
 
     private String nume;
@@ -176,4 +172,8 @@ public class Canal extends Program {
         setFrecventa("13x");
         setZiRevizie(17);
     }
+
+   public double getAudienta(){
+        return audienta;
+   }
 }
